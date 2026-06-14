@@ -1,0 +1,8 @@
+Nom: chouaib | Prenom: yakine | CNE: ccc | M1: 20 | M2: 20 | M3: 20
+Nom: salah | Prenom: yakine | CNE: ccc | M1: 20 | M2: 20 | M3: 20
+Nom: achraf | Prenom: yakine | CNE: ccc | M1: 20 | M2: 20 | M3: 20
+Nom: halil | Prenom: safi | CNE: 12KDK | M1: 11 | M2: 14 | M3: 15
+Nom: safi | Prenom: dawi | CNE: JDHF76 | M1: 20 | M2: 19 | M3: 20
+Nom: halil | Prenom: yakine | CNE: ccc | M1: 1 | M2: 1 | M3: 2
+Nom: salim | Prenom: dosari | CNE: JDK67 | M1: 12 | M2: 11 | M3: 12
+Nom: haha | Prenom: hgaha | CNE: haha | M1: 1 | M2: 1 | M3: 1
