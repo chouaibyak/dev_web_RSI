@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de taches</title>
+</head>
+<body>
+    <h1>Gestion de taches</h1>
+    <input id="tache" type="text" placeholder="Ajouter une nouvelle taches">
+    <button onclick="ajouterTaches()">Ajouter une taches</button>
+    <br>
+    <br>
+    <div id="listeTaches"></div>
+    <br>
+    <br>
+    <script>
+        function ajouterTaches(){
+            let newDiv = document.createElement('div');
+            let textSpan = document.createElement('span');
+            textSpan.textContent = document.getElementById('tache').value;
+            newDiv.appendChild(textSpan);
+            newDiv.id = 'divTache';
+
+            document.getElementById('listeTaches').appendChild(newDiv);
+
+
+            let btnSupprimer = document.createElement('button');
+            btnSupprimer.textContent = 'supprimer';
+            newDiv.appendChild(btnSupprimer);
+            btnSupprimer.onclick = function(){
+                newDiv.remove();
+            }
+
+            let btnRealiser = document.createElement('button');
+            btnRealiser.textContent = 'Realiser';
+            newDiv.appendChild(btnRealiser);
+            btnRealiser.onclick = function(){
+                btnRealiser.remove();
+                textSpan.style.textDecoration = "line-through";
+            }
+        }
+    </script>
+</body>
+</html>

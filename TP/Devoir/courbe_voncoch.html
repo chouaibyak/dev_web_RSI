@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Koch Curve</title>
+</head>
+<body>
+    <h1 style="color: rgb(144, 37, 37);">Courbe de von coch</h1>
+
+    <span>Nombre d'iteration : </span>
+    <input type="number" id="niveau" value="0">
+    <br>
+    <br>
+    <button onclick="dessiner()" >Generer coube de von koch</button>
+    <br>
+    <br>
+
+    <canvas id="monCanvas" width="450" height="400"
+    style="border:1px solid black;"></canvas>
+
+    <script>
+
+        const canvas = document.getElementById("monCanvas");
+        const ctx = canvas.getContext("2d");
+
+        function drawKoch(x1, y1, x2, y2, niveau){
+
+            if(niveau == 0){
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                return;
+            }
+
+            let p1x = x1 + (x2 - x1) / 3;
+            let p1y = y1 + (y2 - y1) / 3;
+
+            let p2x = x1 + 2 * (x2 - x1) / 3;
+            let p2y = y1 + 2 * (y2 - y1) / 3;
+
+            let dx = p2x - p1x;
+            let dy = p2y - p1y;
+
+            let angle = -1 * Math.PI / 3;
+
+            let p3x = p1x + (dx * Math.cos(angle) - dy * Math.sin(angle));
+            let p3y = p1y + (dx * Math.sin(angle) + dy * Math.cos(angle));
+
+            drawKoch(x1, y1, p1x, p1y, niveau-1);
+            drawKoch(p1x, p1y, p3x, p3y, niveau-1);
+            drawKoch(p3x, p3y, p2x, p2y, niveau-1);
+            drawKoch(p2x, p2y, x2, y2, niveau-1);
+        }
+
+        function dessiner(){
+
+            let niveau = parseInt(document.getElementById("niveau").value);
+
+            //sert à effacer tout le contenu du canvas avant de redessiner.
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.beginPath();
+
+            drawKoch(50, 250, 400, 250, niveau);
+
+            ctx.stroke();
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editeur de code</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #dcdcdc;
+        }
+
+        .ligne {
+            display: flex;
+            gap: 5px;
+            margin: 5px;
+            height: 220px;
+        }
+
+        #html, #css, #js, #affiche {
+            flex: 1;
+            display: flex;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Couleurs comme l'image */
+        #html {
+            background-color: #c9d3df;
+        }
+
+        #css {
+            background-color: #d6e2c9;
+        }
+
+        #js {
+            background-color: #e8e0c8;
+        }
+
+        #affiche {
+            background-color: #d3d3d3;
+        }
+
+        textarea, iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 10px;
+            font-family: monospace;
+            border-radius: 5px;
+            background-color: #eeeeee;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #c0c0c0;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a9a9a9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ligne">
+        <div id="html">
+            <textarea id="codehtml" placeholder="Taper votre code HTML"></textarea>
+        </div>
+        <div id="css">
+            <textarea id="codecss" placeholder="Taper votre code CSS"></textarea>
+        </div>
+    </div>
+
+    <div class="ligne">
+        <div id="js">
+            <textarea id="codejs" placeholder="Taper votre code JavaScript"></textarea>
+        </div>
+        <div id="affiche">
+            <iframe id="apercu" ></iframe>
+        </div>
+    </div>
+
+    <div>
+        <button onclick="Executer()">Executer</button>
+    </div>
+
+    <script src="TP6.js"></script>
+</body>
+</html>

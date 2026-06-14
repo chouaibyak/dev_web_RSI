@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculatrice</title>
+</head>
+<body>
+    <h1>Simple Calculatrice: </h1>
+    <input id="ecran" type="text">
+    <br>
+    <br>
+    <button onclick="ajouterCaractere(7)">7</button>
+    <button onclick="ajouterCaractere(8)">8</button>
+    <button onclick="ajouterCaractere(9)">9</button>
+    <button onclick="ajouterCaractere('/')">/</button>
+    <br>
+    <br>
+    <button onclick="ajouterCaractere(4)">4</button>
+    <button onclick="ajouterCaractere(5)">5</button>
+    <button onclick="ajouterCaractere(6)">6</button>
+    <button onclick="ajouterCaractere('*')">*</button>
+    <br>
+    <br>
+    <button onclick="ajouterCaractere(1)">1</button>
+    <button onclick="ajouterCaractere(2)">2</button>
+    <button onclick="ajouterCaractere(3)">3</button>
+    <button onclick="ajouterCaractere('-')">-</button>
+    <br>
+    <br>
+    <button onclick="ajouterCaractere(0)">0</button>
+    <button onclick="ajouterCaractere('.')">.</button>
+    <button onclick="Calcule()">=</button>
+    <button onclick="ajouterCaractere('+')">+</button>
+    <br>
+    <br>
+    <button onclick="supprime(7)">C</button>
+
+    <script>
+        let expression = '';
+        function ajouterCaractere(char){
+            expression += char;
+            document.getElementById('ecran').value = expression;
+        }
+
+        function Calcule(){
+            let resultat = eval(expression);
+            document.getElementById('ecran').value = resultat;
+            expression = String(resultat);
+        }
+
+        function supprime(){
+            expression = "";
+            document.getElementById('ecran').value = "";
+        }
+    </script>
+
+</body>
+</html>

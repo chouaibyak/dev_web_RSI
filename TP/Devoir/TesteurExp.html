@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testeur d'expretion reguliere</title>
+    <style>
+        span, button{
+            color: red;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Testeur d'expressions regulieres</h1>
+        <h2>En javascript</h2>
+
+        <span>Expression reguliere : </span>
+        <input type="text" id="regex" value="\d{2}">
+
+        <br>
+        <br>
+
+        <span>Option : </span>
+        <input type="checkbox" value="g"> g(globale)
+        <input type="checkbox" value="i"> i(insensible à la casse)
+
+        <br>
+        <br>
+
+        <span>Chaine a tester : </span>
+        <input type="text" id="chaine">
+
+        <br>
+        <br>
+
+        <span>Type action : </span>
+        <input type="radio" name="action" value="extraire"> Extraire
+        <input type="radio" name="action" value="remplacer"> Remplacer
+
+        <br>
+        <br>
+
+        <button id="btn">Resulatat du test</button>
+
+        <br>
+        <br>
+        <textarea name="Resulatat" id="resultat" style="width: 300px; height: 100px; "></textarea>
+    </div>
+    <script src="TesteurExp.js"></script>
+</body>
+</html>

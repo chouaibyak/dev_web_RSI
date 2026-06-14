@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generation des mots aleatoires</title>
+</head>
+<body>
+    <h1>Generation des mots aleatoires</h1>
+    <span>
+        Longeur de la chaine : 
+        <input id="longeur" type="text">
+        <button onclick="genererMot()">generer un mots</button>
+        <br>
+        <p id="affiche"></p>
+    </span>
+
+    <script>
+        function genererMot(){
+            let longeur = parseInt(document.getElementById('longeur').value);
+            let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+            let mot = '';
+
+            for(let i =0; i<longeur; i++){
+                let index = Math.floor(Math.random() * alphabet.length);
+                mot += alphabet[index];
+            }
+
+            document.getElementById('affiche').textContent = 'Mot aleatoire : ' + mot;
+        }
+    </script>
+    
+</body>
+</html>

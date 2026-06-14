@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple minuteur</title>
+</head>
+<body>
+    <h1>Simple Minuteur</h1>
+    <span>
+        Entrer les minutes: 
+        <input id="value" type="text">
+        <button onclick="demarer()">Start</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="reset()">Reset</button>
+    </span>
+    <br>
+    <span id="affichage"></span>
+
+    <script>
+        let intervalId = null;
+        let totalSecondes = 0;
+        let secondesRestantes = 0;
+
+        function formaterTemps(s){
+            let min = Math.floor(s/60);
+            let sec = s % 60; //les seconde restante
+
+            return( min < 10 ? '0' : '') + min + ':' + (sec < 10 ? '0' : '') + sec
+        }
+
+        function demarer(){
+            if(intervalId !== null) return;
+            let min = parseInt(document.getElementById('value').value);
+            secondesRestantes = min *60
+
+            intervalId = setInterval(function(){
+                secondesRestantes--;
+                document.getElementById('affichage').textContent = formaterTemps(secondesRestantes);
+                if(secondesRestantes == 0){
+                    alert("Temps ecoule!");
+                    clearInterval(intervalId);
+                    intervalId = null;
+                    document.getElementById('affichage').textContent = '00:00'
+                }
+            }, 1000);
+        }
+
+        function pause(){
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+
+        function reset(){
+            clearInterval(intervalId);
+            intervalId = null;
+            secondesRestantes = 0;
+            document.getElementById('affichage').textContent = '00:00';
+        }
+
+    </script>
+    
+</body>
+</html>

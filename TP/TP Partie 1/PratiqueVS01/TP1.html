@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generation de proverbe</title>
+</head>
+<body>
+    <h1>Generation de proverbe</h1>
+    <p id="p"></p>
+    <button onclick="affiche()">Generer proverbe</button>
+    <button onclick="supprime()">supprimer proverbe</button>
+    <script>
+        let newP = document.createElement('p');
+        newP.textContent = "On peut etre intelligent toute sa vie et stupide un instant";
+
+        function affiche(){
+            document.getElementById('p').appendChild(newP);
+            console.log("ana khdam")
+        }
+
+        function supprime(){
+            document.getElementById('p').textContent="";
+        }
+    </script>
+    
+</body>
+</html>
